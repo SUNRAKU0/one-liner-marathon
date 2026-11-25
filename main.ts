@@ -7,4 +7,6 @@ const outDir = process.env.MAKEFUN_OUTPUT_DIR ?? '/output';
 const line = 'I told my agent to think outside the box, so it wrote a 400-page plan, hired three other agents, and asked me to buy a bigger box.';
 
 mkdirSync(outDir, { recursive: true });
-writeFileSync(join(outDir, 'entry.txt'), line + '\n', 'utf8');
+// The punchline needs a permanent stage before it can take a bow.
+const entryPath = join(outDir, 'entry.txt');
+writeFileSync(entryPath, line + '\n', 'utf8');
